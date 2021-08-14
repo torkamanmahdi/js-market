@@ -1,0 +1,58 @@
+{
+	"products": [
+		{
+			"id": "1",
+			"fields": {
+				"title": "cucumber",
+				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum varius duis at consectetur lorem donec massa sapien. Dignissim diam quis enim lobortis. Egestas fringilla phasellus faucibus scelerisque. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa id neque aliquam vestibulum morbi blandit cursus.",
+				"category": "fruit",
+				"price": 10,
+				"isSale": true,
+				"sale": 8,
+				"qty": 2,
+				"images": {
+					"thumbnail": "/public/thumbnails/cucumber.jpeg",
+					"image1": "",
+					"image2": "",
+					"image3": ""
+				}
+			}
+		},
+		{
+			"id": "2",
+			"fields": {
+				"title": "grape",
+				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum varius duis at consectetur lorem donec massa sapien. Dignissim diam quis enim lobortis. Egestas fringilla phasellus faucibus scelerisque. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa id neque aliquam vestibulum morbi blandit cursus.",
+				"category": "fruit",
+				"price": 15,
+				"isSale": false,
+				"sale": 0,
+				"qty": 4,
+				"images": {
+					"thumbnail": "/public/thumbnails/grape.jpg",
+					"image1": "",
+					"image2": "",
+					"image3": ""
+				}
+			}
+		},
+		{
+			"id": "3",
+			"fields": {
+				"title": "pear",
+				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum varius duis at consectetur lorem donec massa sapien. Dignissim diam quis enim lobortis. Egestas fringilla phasellus faucibus scelerisque. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa id neque aliquam vestibulum morbi blandit cursus.",
+				"category": "fruit",
+				"price": 24,
+				"isSale": false,
+				"sale": 0,
+				"qty": 4,
+				"images": {
+					"thumbnail": "/public/thumbnails/pear.jpg",
+					"image1": "",
+					"image2": "",
+					"image3": ""
+				}
+			}
+		}
+	]
+}
