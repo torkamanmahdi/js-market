@@ -13,18 +13,14 @@ async function loggedInUser() {
 	})
 	.then( (Response) => {
 		if(Response.status == 200) {
-			let result = Response.json()
-			return result.users
+			if( loginEmail.value == Response.email & loginPassword.value == Response.password ) {
+				localStorage.setItem('user', JSON.stringify(Response))
+				return Response.json()
+			}
 		} else if(Response.status == 400) {
 			return Response.text()
 		}
 	} )
-	if (loginEmail.value == users.email && loginPassword.value == users.password) {
-		localStorage.setItem('user', JSON.stringify(users))
-		return users
-	} else {
-		console.log('error')
-	}
 }
 loginSubmit.addEventListener( 'click', (e) => {
 	e.preventDefault()
