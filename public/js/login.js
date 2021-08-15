@@ -3,6 +3,30 @@ const loginEmail = document.querySelector('#loginEmail')
 const loginPassword = document.querySelector('#loginPassword')
 const loginApi = 'https://hakims-webshop.herokuapp.com/user/authentication'
 
+loginEmail.addEventListener('focusout', (e) => {
+	e.preventDefault()
+	function emailValid() {
+		if(loginEmail.value == '') {
+			loginEmail.classList.add('border-red-500')
+		} else {
+			loginEmail.classList.remove('border-red-500')
+		}
+	}
+	emailValid()
+})
+
+loginPassword.addEventListener('focusout', (e) => {
+	e.preventDefault()
+	function passwordValid() {
+		if(loginPassword.value == '') {
+			loginPassword.classList.add('border-red-500')
+		} else {
+			loginPassword.classList.remove('border-red-500')
+		}
+	}
+	passwordValid()
+})
+
 async function loggedInUser() {
 	const dataValue = {
 		email: loginEmail.value,
