@@ -4,25 +4,27 @@ const loginPassword = document.querySelector('#loginPassword')
 const loginApi = 'https://hakims-webshop.herokuapp.com/user/authentication'
 
 async function loggedInUser() {
+	const dataValue = {
+		email: loginEmail.value,
+		password: loginPassword.value
+	}
 	await fetch(loginApi, {
 		method: "POST",
-		body: JSON.stringify(loginEmail.value,loginPassword.value),
 		headers: {
 			"Content-Type": "application/json",
-		}
+		},
+		body: JSON.stringify(dataValue)
 	})
-	.then( (Response) => {
-		if(Response.status == 200) {
-			if( loginEmail.value == Response.email & loginPassword.value == Response.password ) {
-				localStorage.setItem('user', JSON.stringify(Response))
-				return Response.json()
-			}
-		} else if(Response.status == 400) {
-			return Response.text()
+	.then( (data) => {
+		if(data.status == 200) {
+			localStorage.setItem('userAccount', JSON.stringify(dataValue))
+			return data.json()
+		} else if(data.status == 400) {
+			return data.text()
 		}
 	} )
 }
-loginSubmit.addEventListener( 'click', (e) => {
+addEventListener( 'submit', (e) => {
 	e.preventDefault()
 	loggedInUser()
 })
