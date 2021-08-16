@@ -44,10 +44,17 @@ async function loggedInUser() {
 			localStorage.setItem('userAccount', JSON.stringify(dataValue))
 			return data.json()
 		} else if(data.status == 400) {
+			errorLogin()
 			return data.text()
 		}
 	} )
 }
+
+const message = document.querySelector('#message')
+function errorLogin() {
+	message.innerHTML = 'email/password wrong! try again.'
+}
+
 addEventListener( 'submit', (e) => {
 	e.preventDefault()
 	loggedInUser()
