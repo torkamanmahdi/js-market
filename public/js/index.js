@@ -35,3 +35,19 @@ function displayPorudtcs(products) {
 document.addEventListener( 'DOMContentLoaded', () => {
 	getProducts().then( (data) => displayPorudtcs(data) )
 } )
+
+
+let searchProduct = document.querySelector('#search')
+let resultSearch = document.querySelector('#result')
+
+function searchProducts(products) {
+	let arrayProduct = []
+	products.filter( (item) => {
+		searchValue = searchProduct.value
+		item.searchValue.includes(products.title)
+	})
+	resultSearch.innerHTML = arrayProduct
+}
+document.addEventListener( 'keyup', () => {
+	getProducts().then( (data) => searchProducts(data) )
+})
