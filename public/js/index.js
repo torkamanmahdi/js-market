@@ -10,6 +10,7 @@ async function getProducts() {
 		const {thumbnail, image1, image2, image3} = product.fields.images
 		return {id, title, description, category, price, thumbnail, image1, image2, image3}
 	} )
+	localStorage.setItem('products', JSON.stringify(products))
 	return products
 }
 
@@ -37,17 +38,39 @@ document.addEventListener( 'DOMContentLoaded', () => {
 } )
 
 
-let searchProduct = document.querySelector('#search')
-let resultSearch = document.querySelector('#result')
 
-function searchProducts(products) {
-	let arrayProduct = []
-	products.filter( (item) => {
-		searchValue = searchProduct.value
-		item.searchValue.includes(products.title)
-	})
-	resultSearch.innerHTML = arrayProduct
+let arrayProducts = []
+const filters = {
+	searchItem: ''
 }
-document.addEventListener( 'keyup', () => {
-	getProducts().then( (data) => searchProducts(data) )
+const productsJSON = localStorage.getItem('products')
+if(productsJSON !== null) {
+	arrayProducts = JSON.parse(productsJSON)
+}
+const renderTodo = function(arrayProducts, filters) {
+	let filteredProduct = arrayProducts.filter(function(item) {
+		return item.title.toLowerCase().includes(filters.searchItem.toLowerCase())
+	})
+	document.querySelector('#products').innerHTML = ''
+	filteredProduct.forEach(function(item) {
+		const productSearch = document.createElement('div')
+		productSearch.innerHTML = `
+			<div class="bg-white rounded-xl shadow-md hover:shadow-lg border-2 p-1" id-product="${item.id}">
+				<img src="${item.thumbnail}" alt="${item.title}" class="w-64">
+				<div class="p-4">
+					<small class="text-gray-400">${item.category}</small>
+					<h2 class="font-bold text-gray-600 text-xl">${item.title}</h2>
+					<div class="text-purple-500 mt-2 text-sm">
+						<strong class="font-bold">$</strong> ${item.price}
+					</div>
+				</div>
+			</div>
+		`
+		document.querySelector('#products').appendChild(productSearch)
+	})
+}
+renderTodo(arrayProducts, filters)
+document.querySelector('#search').addEventListener('input', function(e) {
+	filters.searchItem = e.target.value
+	renderTodo(arrayProducts, filters)
 })
