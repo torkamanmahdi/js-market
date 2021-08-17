@@ -42,6 +42,7 @@ async function loggedInUser() {
 	.then( (data) => {
 		if(data.status == 200) {
 			localStorage.setItem('userAccount', JSON.stringify(dataValue))
+			location.replace('/public/')
 			return data.json()
 		} else if(data.status == 400) {
 			errorLogin()
@@ -58,4 +59,10 @@ function errorLogin() {
 addEventListener( 'submit', (e) => {
 	e.preventDefault()
 	loggedInUser()
+})
+
+addEventListener( 'DOMContentLoaded', () => {
+	if( localStorage.getItem('userAccount') ) {
+		location.replace('/public/')
+	} 
 })

@@ -45,3 +45,9 @@ registerSubmit.addEventListener('click', async (e) => {
 	const currentUser = await regUser('https://hakims-webshop.herokuapp.com/user/add', data)
 	console.log(currentUser)
 })
+
+document.addEventListener( 'DOMContentLoaded', () => {
+	if(localStorage.getItem('userAccount')) {
+		location.replace('/public/')
+	}
+})
