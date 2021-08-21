@@ -41,14 +41,19 @@ async function loggedInUser() {
 	})
 	.then( (data) => {
 		if(data.status == 200) {
-			localStorage.setItem('userAccount', JSON.stringify(dataValue))
-			location.replace('/public/')
 			return data.json()
 		} else if(data.status == 400) {
 			errorLogin()
 			return data.text()
 		}
-	} )
+	} ).then((data) => {
+		if(data != 'Incorrect USER or PASSWORD') {
+			localStorage.setItem('userAccount', JSON.stringify(data))
+			location.replace('/public/')
+		} else {
+			alert(data)
+		}
+	})
 }
 
 const message = document.querySelector('#message')

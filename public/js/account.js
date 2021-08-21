@@ -18,5 +18,5 @@ profile.innerHTML = `
 	<p><strong>Email:</strong> ${profileData.email}</p>
 	<p><strong>Password:</strong> ${profileData.password}</p>
 	<p><strong>Name:</strong> ${profileData.firstname}</p>
-	<p><strong>Family:</strong> ${profileData.lastname}</p>
+	<p><strong>City:</strong> ${profileData.address.city}</p>
 `
