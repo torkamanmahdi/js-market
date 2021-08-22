@@ -31,6 +31,7 @@ function displayPorudtcs(products) {
 		`
 	} )
 	productsDOM.innerHTML = result
+	return result
 }
 
 document.addEventListener( 'DOMContentLoaded', () => {
@@ -48,20 +49,20 @@ if(productsJSON !== null) {
 	arrayProducts = JSON.parse(productsJSON)
 }
 const renderTodo = function(arrayProducts, filters) {
-	let filteredProduct = arrayProducts.filter(function(item) {
-		return item.title.toLowerCase().includes(filters.searchItem.toLowerCase())
+	let filteredProduct = arrayProducts.filter(function(product) {
+		return product.title.toLowerCase().includes(filters.searchItem.toLowerCase())
 	})
 	document.querySelector('#products').innerHTML = ''
-	filteredProduct.forEach(function(item) {
+	filteredProduct.forEach(function(product) {
 		const productSearch = document.createElement('div')
 		productSearch.innerHTML = `
-			<div class="bg-white rounded-xl shadow-md hover:shadow-lg border-2 p-1" id-product="${item.id}">
-				<img src="${item.thumbnail}" alt="${item.title}" class="w-64">
+			<div class="bg-white rounded-xl shadow-md hover:shadow-lg border-2 p-1" id-product="${product.id}">
+				<img src="${product.thumbnail}" alt="${product.title}" class="w-64">
 				<div class="p-4">
-					<small class="text-gray-400">${item.category}</small>
-					<h2 class="font-bold text-gray-600 text-xl">${item.title}</h2>
+					<small class="text-gray-400">${product.category}</small>
+					<h2 class="font-bold text-gray-600 text-xl">${product.title}</h2>
 					<div class="text-purple-500 mt-2 text-sm">
-						<strong class="font-bold">$</strong> ${item.price}
+						<strong class="font-bold">$</strong> ${product.price}
 					</div>
 				</div>
 			</div>
@@ -74,3 +75,37 @@ document.querySelector('#search').addEventListener('input', function(e) {
 	filters.searchItem = e.target.value
 	renderTodo(arrayProducts, filters)
 })
+
+
+
+function DisplayItemProduct() {
+
+	let getProducts = document.querySelector('#getProducts')
+	let itemProuct = document.createElement('div')
+
+	getProducts.append(itemProuct)
+	itemProuct.classList.add('bg-white', 'rounded-xl', 'shadow-md', 'hover:shadow-lg', 'border-2', 'p-1')
+	// thumbnail
+	let thumbnailProduct = document.createElement('img')
+	thumbnailProduct.src = 'thumbnails/pear.jpg'
+	// class: p-4
+	let classp4 = document.createElement('div')
+	itemProuct.append(classp4)
+	classp4.classList.add('p-4')
+	// categpory
+	let categoryProduct = document.createElement('small')
+	categoryProduct.classList.add('text-gray-400')
+	classp4.appendChild(categoryProduct).innerHTML = 'category'
+	// title product
+	let titleProduct = document.createElement('h2')
+	titleProduct.classList.add('font-bold', 'text-gray-600', 'text-xl')
+	classp4.appendChild(titleProduct).innerHTML = 'Title'
+	// class: text-purple-500 mt-2 text-sm
+	let priceClass = document.createElement('strong')
+	priceClass.classList.add('text-purple-500', 'mt-2', 'text-sm')
+	classp4.appendChild(priceClass).innerHTML = '10 dollar'
+
+	itemProuct.append(thumbnailProduct, classp4)
+
+}
+DisplayItemProduct()
