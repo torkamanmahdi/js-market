@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>JS Market</title>
-	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
 	<link rel="stylesheet" href="tailwind.css">
 	<link rel="stylesheet" href="style.css">
 </head>
@@ -24,17 +24,22 @@
 		</nav>
 	</header>
 
-	<main>
+	<div class="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-4 py-10">
 
-		<section class="container mx-auto flex items-center justify-center mt-20 h-2/3">
-			<form class="w-2/3">
-				<input type="search" name="" id="search" placeholder="Search ..." class="border-2 rounded-full px-5 py-2 w-full">
-			</form>
-		</section>
+		<main class="col-span-10">
+			<section class="flex items-center justify-center">
+				<form class="w-2/3">
+					<input type="search" name="" id="search" placeholder="Search ..." class="border-2 rounded-full px-5 py-2 w-full">
+				</form>
+			</section>
+			<section id="products" class="container mx-auto grid grid-cols-4 gap-4 my-10"></section>
+		</main>
 
-		<section id="products" class="container mx-auto grid grid-cols-6 gap-4 my-20"></section>
+		<aside class="col-span-2 border-l-2 pl-2">
+			<div id="cart">you cart is empty</div>
+		</aside>
 
-	</main>
+	</div>
 
 	<div id="getProducts" class="container mx-auto grid grid-cols-6 gap-4 my-20"></div>
 

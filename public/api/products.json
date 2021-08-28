@@ -53,6 +53,24 @@
 					"image3": ""
 				}
 			}
+		},
+		{
+			"id": "4",
+			"fields": {
+				"title": "pear1",
+				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum varius duis at consectetur lorem donec massa sapien. Dignissim diam quis enim lobortis. Egestas fringilla phasellus faucibus scelerisque. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa id neque aliquam vestibulum morbi blandit cursus.",
+				"category": "fruit",
+				"price": 24,
+				"isSale": false,
+				"sale": 0,
+				"qty": 4,
+				"images": {
+					"thumbnail": "/public/thumbnails/pear.jpg",
+					"image1": "",
+					"image2": "",
+					"image3": ""
+				}
+			}
 		}
 	]
 }

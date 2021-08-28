@@ -5,7 +5,7 @@ async function getProducts() {
 	const data = await result.json()
 	let products = data.products
 	products = products.map( (product) => {
-		const {id} = products
+		const {id} = product
 		const {title, description, category, price} = product.fields
 		const {thumbnail, image1, image2, image3} = product.fields.images
 		return {id, title, description, category, price, thumbnail, image1, image2, image3}
@@ -104,8 +104,24 @@ function DisplayItemProduct() {
 	let priceClass = document.createElement('strong')
 	priceClass.classList.add('text-purple-500', 'mt-2', 'text-sm')
 	classp4.appendChild(priceClass).innerHTML = '10 dollar'
+	// add to cart
+	let btnAdd = document.createElement('button')
+	btnAdd.classList.add('buy-this', 'block', 'py-1', 'px-3', 'bg-green-400', 'mt-4', 'rounded-md')
+	btnAdd.setAttribute('id-product', '`${product.id}`')
+	classp4.appendChild(btnAdd).innerHTML = 'Buy'
 
 	itemProuct.append(thumbnailProduct, classp4)
 
 }
 DisplayItemProduct()
+
+async function addToCart() {
+	let getAdd = document.querySelector('.buy-this')
+	let getCart = document.querySelector('#cart')
+	getAdd.addEventListener('click', (e) => {
+		localStorage.setItem('cart', 'added')
+		getCart.innerHTML = 'added'
+		console.log('added')
+	})
+}
+addToCart()
