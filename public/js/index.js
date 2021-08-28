@@ -113,7 +113,12 @@ function DisplayItemProduct() {
 	itemProuct.append(thumbnailProduct, classp4)
 
 }
-DisplayItemProduct()
+
+
+let newprod = JSON.parse(productsJSON)
+newprod.forEach(item => {
+	DisplayItemProduct(item)
+})
 
 
 
@@ -123,7 +128,6 @@ function addToCart() {
 	getAdd.addEventListener('click', () => {
 		localStorage.setItem('cart', 'added')
 		emptyMessage.innerHTML = 'added'
-		console.log('added')
 	})
 }
 addToCart()
