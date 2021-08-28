@@ -115,13 +115,27 @@ function DisplayItemProduct() {
 }
 DisplayItemProduct()
 
-async function addToCart() {
-	let getAdd = document.querySelector('.buy-this')
-	let getCart = document.querySelector('#cart')
-	getAdd.addEventListener('click', (e) => {
+
+
+function addToCart() {
+	const getAdd = document.querySelector('.buy-this')
+	const emptyMessage = document.querySelector('#nullMessage')
+	getAdd.addEventListener('click', () => {
 		localStorage.setItem('cart', 'added')
-		getCart.innerHTML = 'added'
+		emptyMessage.innerHTML = 'added'
 		console.log('added')
 	})
 }
 addToCart()
+
+
+
+function removeCart() {
+	const getRemove = document.querySelector('#removeCart')
+	getRemove.addEventListener('click', () => {
+		localStorage.removeItem('cart')
+		const emptyMessage = document.querySelector('#nullMessage')
+		emptyMessage.innerHTML = 'your cart is empty again'
+	})
+}
+removeCart()
