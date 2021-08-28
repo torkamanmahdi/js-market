@@ -106,8 +106,8 @@ function DisplayItemProduct() {
 	classp4.appendChild(priceClass).innerHTML = '10 dollar'
 	// add to cart
 	let btnAdd = document.createElement('button')
-	btnAdd.classList.add('buy-this', 'block', 'py-1', 'px-3', 'bg-green-400', 'mt-4', 'rounded-md')
-	btnAdd.setAttribute('id-product', '`${product.id}`')
+	btnAdd.classList.add('buy-this', 'w-full', 'py-1', 'px-3', 'bg-green-400', 'mt-4', 'rounded-md')
+	btnAdd.setAttribute('id-product', '`${product.id}`') // ask
 	classp4.appendChild(btnAdd).innerHTML = 'Buy'
 
 	itemProuct.append(thumbnailProduct, classp4)

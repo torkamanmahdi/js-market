@@ -28,15 +28,16 @@
 
 		<main class="col-span-10">
 			<section class="flex items-center justify-center">
-				<form class="w-2/3">
+				<form class="w-2/3 relative">
 					<input type="search" name="" id="search" placeholder="Search ..." class="border-2 rounded-full px-5 py-2 w-full">
 				</form>
+				<div id="result" class="hidden absolute top-1"></div>
 			</section>
 			<section id="products" class="container mx-auto grid grid-cols-4 gap-4 my-10"></section>
 		</main>
 
 		<aside class="col-span-2 border-l-2 pl-2">
-			<div id="cart">you cart is empty</div>
+			<div id="cart" class="sticky top-2">you cart is empty</div>
 		</aside>
 
 	</div>
