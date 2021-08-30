@@ -40,7 +40,8 @@ searchBar.addEventListener('input', function(e) {
 
 	if(inputValue !== null) {
 		searchResult.classList.remove('hidden')
-	} else { // not working
+	}
+	if(inputValue === '') {
 		searchResult.classList.add('hidden')
 	}
 

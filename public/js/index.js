@@ -13,6 +13,7 @@ async function getProducts() {
 	return products
 }
 
+
 function displayPorudtcs(products) {
 	products.forEach( (product) => {
 
@@ -21,7 +22,7 @@ function displayPorudtcs(products) {
 	
 		getProducts.append(itemProuct)
 		itemProuct.classList.add('bg-white', 'rounded-xl', 'shadow-md', 'hover:shadow-lg', 'border-2', 'p-1')
-		itemProuct.setAttribute('id-product', `${product.id}`)
+		itemProuct.setAttribute('id', `${product.id}`)
 		// thumbnail
 		let thumbnailProduct = document.createElement('img')
 		thumbnailProduct.src = `${product.thumbnail}`
@@ -44,7 +45,6 @@ function displayPorudtcs(products) {
 		// add to cart
 		let btnAdd = document.createElement('button')
 		btnAdd.classList.add('buy-this', 'w-full', 'py-1', 'px-3', 'bg-green-400', 'mt-4', 'rounded-md')
-		btnAdd.setAttribute('id-product', `${product.id}`)
 		classp4.appendChild(btnAdd).innerHTML = 'Buy This'
 	
 		itemProuct.append(thumbnailProduct, classp4)

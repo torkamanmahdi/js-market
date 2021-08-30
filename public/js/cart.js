@@ -1,12 +1,10 @@
 const getAdd = document.querySelector('.buy-this')
 const emptyMessage = document.querySelector('#nullMessage')
 const getRemove = document.querySelector('#removeCart')
-console.log(getAdd)
 
-getAdd.addEventListener('click', () => {
-	localStorage.setItem('cart', 'added')
-	emptyMessage.innerHTML = 'added'
-})
+getAdd.forEach(el => el.addEventListener('click', event => {
+	console.log(event)
+}))
 
 getRemove.addEventListener('click', () => {
 	localStorage.removeItem('cart')
