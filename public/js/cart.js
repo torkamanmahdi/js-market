@@ -1,19 +1,14 @@
-function addToCart() {
-	const getAdd = document.querySelector('.buy-this')
-	const emptyMessage = document.querySelector('#nullMessage')
-	getAdd.addEventListener('click', () => {
-		localStorage.setItem('cart', 'added')
-		emptyMessage.innerHTML = 'added'
-	})
-}
-// addToCart()
+const getAdd = document.querySelector('.buy-this')
+const emptyMessage = document.querySelector('#nullMessage')
+const getRemove = document.querySelector('#removeCart')
+console.log(getAdd)
 
-function removeCart() {
-	const getRemove = document.querySelector('#removeCart')
-	getRemove.addEventListener('click', () => {
-		localStorage.removeItem('cart')
-		const emptyMessage = document.querySelector('#nullMessage')
-		emptyMessage.innerHTML = 'your cart is empty again'
-	})
-}
-removeCart()
+getAdd.addEventListener('click', () => {
+	localStorage.setItem('cart', 'added')
+	emptyMessage.innerHTML = 'added'
+})
+
+getRemove.addEventListener('click', () => {
+	localStorage.removeItem('cart')
+	emptyMessage.innerHTML = 'your cart is empty again'
+})
