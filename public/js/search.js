@@ -6,7 +6,16 @@ const filters = {
 }
 const productsJSON = localStorage.getItem('products')
 if(productsJSON !== null) {
-	arrayProducts = JSON.parse(productsJSON)
+	const result = await fetch('api/products.json')
+	const data = await result.json()
+	let products = data.products
+	products = products.map( (product) => {
+		const {id} = product
+		const {title, description, category, price} = product.fields
+		const {thumbnail, image1, image2, image3} = product.fields.images
+		return {id, title, description, category, price, thumbnail, image1, image2, image3}
+	} )
+	arrayProducts = products
 }
 
 const renderTodo = function(arrayProducts, filters) {
