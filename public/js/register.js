@@ -43,7 +43,6 @@ registerSubmit.addEventListener('click', async (e) => {
 		"accountType": 0
 	}
 	const currentUser = await regUser('https://hakims-webshop.herokuapp.com/user/add', data)
-	console.log(currentUser)
 })
 
 document.addEventListener( 'DOMContentLoaded', () => {

@@ -37,6 +37,7 @@ function displayPorudtcs(products) {
 		// title product
 		let titleProduct = document.createElement('h2')
 		titleProduct.classList.add('font-bold', 'text-gray-600', 'text-xl')
+		titleProduct.setAttribute('id', 'title')
 		classp4.appendChild(titleProduct).innerHTML = `${product.title}`
 		// class: text-purple-500 mt-2 text-sm
 		let priceClass = document.createElement('strong')
@@ -51,7 +52,4 @@ function displayPorudtcs(products) {
 
 	} )
 }
-
-document.addEventListener( 'DOMContentLoaded', () => {
-	getProducts().then( (data) => displayPorudtcs(data) )
-} )
+getProducts().then( (data) => displayPorudtcs(data) )
