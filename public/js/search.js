@@ -4,19 +4,17 @@ let arrayProducts = []
 const filters = {
 	searchItem: ''
 }
-const productsJSON = localStorage.getItem('products')
-if(productsJSON !== null) {
-	const result = await fetch('api/products.json')
-	const data = await result.json()
-	let products = data.products
-	products = products.map( (product) => {
-		const {id} = product
-		const {title, description, category, price} = product.fields
-		const {thumbnail, image1, image2, image3} = product.fields.images
-		return {id, title, description, category, price, thumbnail, image1, image2, image3}
-	} )
-	arrayProducts = products
-}
+
+const result = await fetch('api/products.json')
+const data = await result.json()
+let products = data.products
+products = products.map( (product) => {
+	const {id} = product
+	const {title, description, category, price} = product.fields
+	const {thumbnail} = product.fields.images
+	return {id, title, description, category, price, thumbnail}
+} )
+arrayProducts = products
 
 const renderTodo = function(arrayProducts, filters) {
 	let filteredProduct = arrayProducts.filter(function(product) {
