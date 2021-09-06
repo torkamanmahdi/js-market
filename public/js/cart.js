@@ -1,29 +1,31 @@
 const getItem = document.querySelector('#getProducts')
-const cartMessage = document.querySelector('#nullMessage')
+const cartList = document.querySelector('#cartList')
+const ifEmpty = document.querySelector('#ifEmpty')
 const emptyCart = document.querySelector('#removeCart')
-let iteming = []
-iteming = JSON.parse(localStorage.getItem('cart'))
-console.log(iteming)
-iteming.forEach(element => {
-	cartMessage.innerHTML = `${element.title}`
-})
 
-function eventListeners() {
+function cartLoader() {
 	getItem.addEventListener('click', (e) => {
 		getProductItem(e)
 		itemLS()
-	})
-	emptyCart.addEventListener('click', () => {
-		removeLS()
-		cartMessage.textContent = 'cart is empty'
+		ifEmpty.innerHTML = ''
 	})
 	document.addEventListener('DOMContentLoaded', (e) => {
-		if(!localStorage.getItem('cart')) {
-			cartMessage.textContent = 'cart is empty'
+		if(localStorage.getItem('cart')) {
+			let inCart = JSON.parse(localStorage.getItem('cart'))
+			inCart.forEach(element => {
+				cartList.innerHTML += `<div>${element.title}, price: ${element.price}</div>`
+			})
+		} else {
+			ifEmpty.innerHTML = 'cart is empty'
 		}
 	})
+	emptyCart.addEventListener('click', (e) => {
+		removeLS()
+		cartList.innerHTML = ''
+		ifEmpty.innerHTML = 'cart is empty'
+	})
 }
-eventListeners()
+cartLoader()
 
 function getProductItem(e) {
 	if(e.target.getElementsByClassName('buy-this')) {
@@ -43,7 +45,7 @@ function addToCart(itemInfo) {
 	row.innerHTML = `
 		<div>${itemInfo.title}, price: ${itemInfo.price}</div>
 	`
-	cartMessage.appendChild(row)
+	cartList.appendChild(row)
 	cartToLS(itemInfo)
 }
 
@@ -65,7 +67,6 @@ function cartLS() {
 
 function itemLS() {
 	let LSitems = localStorage.getItem('cart')
-	// console.log(JSON.parse(LSitems))
 }
 
 function removeLS() {
