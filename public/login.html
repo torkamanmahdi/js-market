@@ -30,7 +30,8 @@
 			<h1 class="font-bold mb-5 text-2xl border-b-2 pb-3">Login</h1>
 			<div id="message" class="text-red-500 py-3"></div>
 			<form>
-				<input type="email" name="" id="loginEmail" placeholder="Email" class="border-2 px-3 py-1 rounded-xl w-full mb-5">
+				<small class="error text-white bg-red-500 px-4 py-1" hidden>email format wrong</small>
+				<input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" minlength="3" type="email" name="" id="loginEmail" placeholder="Email" class="border-2 px-3 py-1 rounded-xl w-full mb-5">
 				<input type="password" name="" id="loginPassword" placeholder="*******" class="border-2 px-3 py-1 rounded-xl w-full mb-5">
 				<input type="submit" name="" id="loginSubmit" value="Login" class="px-3 py-1 rounded-xl w-full bg-blue-500 text-white cursor-pointer">
 			</form>

@@ -71,3 +71,15 @@ addEventListener( 'DOMContentLoaded', () => {
 		location.replace('/public/')
 	} 
 })
+
+const errr = document.querySelector('.error')
+loginEmail.addEventListener('input', (e) => {
+	const target = e.target
+	if(target.validity.tooShort) {
+		target.setCustomValidity('lol')
+	}
+	errr.hidden = true
+	if(target.validity.typeMismatch) {
+		errr.hidden = false
+	}
+})
