@@ -57,15 +57,159 @@
 		{
 			"id": "4",
 			"fields": {
-				"title": "pear1",
+				"title": "cantaloupe",
 				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum varius duis at consectetur lorem donec massa sapien. Dignissim diam quis enim lobortis. Egestas fringilla phasellus faucibus scelerisque. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa id neque aliquam vestibulum morbi blandit cursus.",
 				"category": "fruit",
-				"price": 24,
+				"price": 7,
 				"isSale": false,
 				"sale": 0,
 				"qty": 4,
 				"images": {
-					"thumbnail": "/public/thumbnails/pear.jpg",
+					"thumbnail": "/public/thumbnails/cantaloupe.jpg",
+					"image1": "",
+					"image2": "",
+					"image3": ""
+				}
+			}
+		},
+		{
+			"id": "5",
+			"fields": {
+				"title": "pepper",
+				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum varius duis at consectetur lorem donec massa sapien. Dignissim diam quis enim lobortis. Egestas fringilla phasellus faucibus scelerisque. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa id neque aliquam vestibulum morbi blandit cursus.",
+				"category": "fruit",
+				"price": 7,
+				"isSale": false,
+				"sale": 0,
+				"qty": 4,
+				"images": {
+					"thumbnail": "/public/thumbnails/pepper.jpg",
+					"image1": "",
+					"image2": "",
+					"image3": ""
+				}
+			}
+		},
+		{
+			"id": "6",
+			"fields": {
+				"title": "cauliflower",
+				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum varius duis at consectetur lorem donec massa sapien. Dignissim diam quis enim lobortis. Egestas fringilla phasellus faucibus scelerisque. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa id neque aliquam vestibulum morbi blandit cursus.",
+				"category": "fruit",
+				"price": 7,
+				"isSale": false,
+				"sale": 0,
+				"qty": 4,
+				"images": {
+					"thumbnail": "/public/thumbnails/cauliflower.jpg",
+					"image1": "",
+					"image2": "",
+					"image3": ""
+				}
+			}
+		},
+		{
+			"id": "7",
+			"fields": {
+				"title": "Capsicum",
+				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum varius duis at consectetur lorem donec massa sapien. Dignissim diam quis enim lobortis. Egestas fringilla phasellus faucibus scelerisque. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa id neque aliquam vestibulum morbi blandit cursus.",
+				"category": "fruit",
+				"price": 11,
+				"isSale": false,
+				"sale": 0,
+				"qty": 4,
+				"images": {
+					"thumbnail": "/public/thumbnails/Capsicum.jpg",
+					"image1": "",
+					"image2": "",
+					"image3": ""
+				}
+			}
+		},
+		{
+			"id": "8",
+			"fields": {
+				"title": "peach",
+				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum varius duis at consectetur lorem donec massa sapien. Dignissim diam quis enim lobortis. Egestas fringilla phasellus faucibus scelerisque. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa id neque aliquam vestibulum morbi blandit cursus.",
+				"category": "fruit",
+				"price": 28,
+				"isSale": false,
+				"sale": 0,
+				"qty": 4,
+				"images": {
+					"thumbnail": "/public/thumbnails/peach.jpg",
+					"image1": "",
+					"image2": "",
+					"image3": ""
+				}
+			}
+		},
+		{
+			"id": "9",
+			"fields": {
+				"title": "orange",
+				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum varius duis at consectetur lorem donec massa sapien. Dignissim diam quis enim lobortis. Egestas fringilla phasellus faucibus scelerisque. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa id neque aliquam vestibulum morbi blandit cursus.",
+				"category": "fruit",
+				"price": 7,
+				"isSale": false,
+				"sale": 0,
+				"qty": 4,
+				"images": {
+					"thumbnail": "/public/thumbnails/orange.jpg",
+					"image1": "",
+					"image2": "",
+					"image3": ""
+				}
+			}
+		},
+		{
+			"id": "10",
+			"fields": {
+				"title": "banana",
+				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum varius duis at consectetur lorem donec massa sapien. Dignissim diam quis enim lobortis. Egestas fringilla phasellus faucibus scelerisque. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa id neque aliquam vestibulum morbi blandit cursus.",
+				"category": "fruit",
+				"price": 16,
+				"isSale": false,
+				"sale": 0,
+				"qty": 4,
+				"images": {
+					"thumbnail": "/public/thumbnails/banana.jpg",
+					"image1": "",
+					"image2": "",
+					"image3": ""
+				}
+			}
+		},
+		{
+			"id": "11",
+			"fields": {
+				"title": "strawberry",
+				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum varius duis at consectetur lorem donec massa sapien. Dignissim diam quis enim lobortis. Egestas fringilla phasellus faucibus scelerisque. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa id neque aliquam vestibulum morbi blandit cursus.",
+				"category": "fruit",
+				"price": 7,
+				"isSale": false,
+				"sale": 0,
+				"qty": 4,
+				"images": {
+					"thumbnail": "/public/thumbnails/strawberry.jpg",
+					"image1": "",
+					"image2": "",
+					"image3": ""
+				}
+			}
+		},
+		{
+			"id": "12",
+			"fields": {
+				"title": "cherries",
+				"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum varius duis at consectetur lorem donec massa sapien. Dignissim diam quis enim lobortis. Egestas fringilla phasellus faucibus scelerisque. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Massa id neque aliquam vestibulum morbi blandit cursus.",
+				"category": "fruit",
+				"price": 7,
+				"isSale": false,
+				"sale": 0,
+				"qty": 4,
+				"images": {
+					"thumbnail": "/public/thumbnails/cherries.jpg",
 					"image1": "",
 					"image2": "",
 					"image3": ""

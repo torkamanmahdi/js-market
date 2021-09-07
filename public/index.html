@@ -5,45 +5,50 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>JS Market</title>
-	<!-- <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="tailwind.css">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-100">
 
-	<header class="container mx-auto py-3 flex justify-between items-center border-b-2">
+	<header class="container mx-auto py-3 flex flex-col lg:flex-row justify-between items-center border-b-2">
 		<a href="" title="">
-			<img src="img/logo.png" class="w-48" alt="">
+			<img src="img/logo.png" class="w-48 mb-4 lg:mb-0" alt="">
 		</a>
 		<nav class="flex space-x-6">
-			<a href="/public/" title="">Homepage</a>
-			<a href="/public/account.html" title="">User Account</a>
+			<a href="/public/" title="">Home</a>
+			<a href="/public/profile.html" title="">profile</a>
 			<a href="/public/login.html" title="">Login</a>
 			<a href="/public/register.html" title="">Register</a>
-			<a href="/public/cart.html" title="">Cart</a>
 		</nav>
 	</header>
 
-	<div class="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-4 py-10">
+	<div class="container mx-auto grid grid-cols-12 lg:grid-cols-12 gap-4 py-10">
 
-		<main class="col-span-10">
-			<section class="flex items-center justify-center relative">
-				<form class="w-2/3">
-					<input type="search" name="" id="search" placeholder="Search ..." class="border-2 rounded-sm px-5 py-3 w-full">
+		<main class="col-span-12 lg:col-span-9">
+
+			<section class="flex items-center justify-center relative px-3 lg:px-0">
+				<form class="w-full lg:w-2/3">
+					<input type="search" name="" id="search" placeholder="Search ..." class="border-2 rounded-sm px-2 lg:px-5 py-3 w-full">
 				</form>
-				<div id="result" class="absolute top-12 w-2/3 bg-white py-4 px-6 border-2 hidden"></div>
+				<div id="result" class="absolute top-12 w-full lg:w-2/3 bg-white py-4 px-6 border-2 border-gray-400 lg:border-gray-200 hidden"></div>
 			</section>
-			<section id="getProducts" class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 my-20"></section>
+
+			<section id="getProducts" class="container mx-auto grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 my-20"></section>
+
 		</main>
 
-		<aside class="col-span-2 border-l-2 pl-2">
+		<aside class="col-span-12 lg:col-span-3 border-l-0 lg:border-l-2 pl-0 lg:pl-2">
 			<div id="cart" class="sticky top-5">
+
 				<div id="nullMessage" class="bg-gray-200 px-3 py-1">
 					<strong class="border-b-2 border-white pb-1 mb-2 block">Your Card:</strong>
 					<div id="cartList"></div>
 					<small id="ifEmpty"></small>
 				</div>
-				<button id="removeCart" class="w-full bg-red-500 py-1 mt-4 text-white rounded-md">remove items</button>
+
+				<button id="removeCart" class="w-full bg-red-500 py-1 mt-4 text-white rounded-md">Remove Cart</button>
+
 			</div>
 		</aside>
 

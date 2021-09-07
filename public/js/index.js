@@ -36,16 +36,16 @@ function displayPorudtcs(products) {
 		classp4.appendChild(categoryProduct).innerHTML = `${product.category}`
 		// title product
 		let titleProduct = document.createElement('h2')
-		titleProduct.classList.add('font-bold', 'text-gray-600', 'text-xl')
+		titleProduct.classList.add('font-bold', 'text-xl')
 		titleProduct.setAttribute('id', 'title')
 		classp4.appendChild(titleProduct).innerHTML = `${product.title}`
 		// class: text-purple-500 mt-2 text-sm
 		let priceClass = document.createElement('strong')
-		priceClass.classList.add('text-purple-500', 'mt-2', 'text-sm')
-		classp4.appendChild(priceClass).innerHTML = `${product.price}`
+		priceClass.classList.add('mt-2', 'text-sm')
+		classp4.appendChild(priceClass).innerHTML = `price: <strong class="text-purple-500 text-xl">${product.price}</strong>`
 		// add to cart
 		let btnAdd = document.createElement('button')
-		btnAdd.classList.add('buy-this', 'w-full', 'py-1', 'px-3', 'bg-green-400', 'mt-4', 'rounded-md')
+		btnAdd.classList.add('buy-this', 'w-full', 'py-1', 'px-3', 'bg-green-600', 'mt-4', 'rounded-md', 'text-white')
 		classp4.appendChild(btnAdd).innerHTML = 'Buy This'
 	
 		itemProuct.append(thumbnailProduct, classp4)
