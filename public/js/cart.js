@@ -13,7 +13,15 @@ function cartLoader() {
 		if(localStorage.getItem('cart')) {
 			let inCart = JSON.parse(localStorage.getItem('cart'))
 			inCart.forEach(element => {
-				cartList.innerHTML += `<div>${element.title}, price: ${element.price}</div>`
+				cartList.innerHTML += `
+					<div class="bg-white flex items-center p-2 border-b-2 border-gray-300">
+						<img src="${element.thumbnail}" class="w-16">
+						<div>
+							<div class="font-bold">${element.title}</div>
+							<div>price: ${element.price}</div>
+						</div>
+					</div>
+				`
 			})
 		} else {
 			ifEmpty.innerHTML = 'cart is empty'
@@ -43,7 +51,13 @@ function getProductItem(e) {
 function addToCart(itemInfo) {
 	let row = document.createElement('div')
 	row.innerHTML = `
-		<div>${itemInfo.title}, price: ${itemInfo.price}</div>
+		<div class="bg-white flex items-center p-2 border-b-2 border-gray-300">
+			<img src="${itemInfo.thumbnail}" class="w-16">
+			<div>
+				<div class="font-bold">${itemInfo.title}</div>
+				<div>price: ${itemInfo.price}</div>
+			</div>
+		</div>
 	`
 	cartList.appendChild(row)
 	cartToLS(itemInfo)
