@@ -2,6 +2,7 @@ const getItem = document.querySelector('#getProducts')
 const cartList = document.querySelector('#cartList')
 const ifEmpty = document.querySelector('#ifEmpty')
 const emptyCart = document.querySelector('#removeCart')
+const totalPrice = document.querySelector('#totalPrice')
 
 function cartLoader() {
 	getItem.addEventListener('click', (e) => {
@@ -23,6 +24,7 @@ function cartLoader() {
 					</div>
 				`
 			})
+			totalCart(inCart)
 		} else {
 			ifEmpty.innerHTML = 'cart is empty'
 		}
@@ -41,7 +43,7 @@ function getProductItem(e) {
 		const itemInfo = {
 			id: itemProduct.id,
 			title: itemProduct.querySelector('#title').innerText,
-			price: itemProduct.querySelector('strong').innerText,
+			price: itemProduct.querySelector('.price-tag strong').innerText,
 			thumbnail: itemProduct.querySelector('img').src
 		}
 		addToCart(itemInfo)
@@ -88,49 +90,3 @@ function removeLS() {
 		localStorage.removeItem('cart')
 	}
 }
-
-
-
-// const emptyMessage = document.querySelector('#nullMessage')
-// const getRemove = document.querySelector('#removeCart')
-
-// const result = await fetch('api/products.json')
-// const data = await result.json()
-// let products = data.products
-// products = products.map( (product) => {
-// 	const {id} = product
-// 	const {title, description, category, price} = product.fields
-// 	const {thumbnail} = product.fields.images
-// 	return {id, title, description, category, price, thumbnail}
-// } )
-
-// let cartItem = {
-// 	id: 0,
-// 	title: '',
-// 	price: 2,
-// 	thumbnail: '',
-// 	qty: 1
-// }
-// const getAdd = Array.from(document.getElementsByClassName('buy-this'))
-// getAdd.forEach(products => products.addEventListener('click', (e) => {
-// 	cartItem.id = e.target.parentElement.parentNode.id
-// 	cartItem.title = e.target.parentElement.parentElement.querySelector('#title').innerText
-// 	cartItem.price = e.target.parentElement.parentElement.querySelector('strong').innerText
-// 	cartItem.thumbnail = e.target.parentElement.parentElement.querySelector('img').src
-// 	localStorage.setItem('cart', JSON.stringify(cartItem))
-
-// 	let getCartItem = JSON.parse(localStorage.getItem('cart'))
-// 	emptyMessage.innerHTML = `<div>${getCartItem.title}, price: ${getCartItem.price}</div>`
-// }))
-
-// if(localStorage.getItem('cart')) {
-// 	let getCartItem = JSON.parse(localStorage.getItem('cart'))
-// 	emptyMessage.innerHTML = `<div>${getCartItem.title}, price: ${getCartItem.price}</div>`
-// } else {
-// 	emptyMessage.innerHTML = 'empty cart'
-// }
-
-// getRemove.addEventListener('click', () => {
-// 	localStorage.removeItem('cart')
-// 	emptyMessage.innerHTML = 'empty cart'
-// })

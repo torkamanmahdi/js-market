@@ -41,7 +41,7 @@ function displayPorudtcs(products) {
 		classp4.appendChild(titleProduct).innerHTML = `${product.title}`
 		// class: text-purple-500 mt-2 text-sm
 		let priceClass = document.createElement('strong')
-		priceClass.classList.add('mt-2', 'text-sm')
+		priceClass.classList.add('price-tag', 'mt-2', 'text-sm')
 		classp4.appendChild(priceClass).innerHTML = `price: <strong class="text-purple-500 text-xl">${product.price}</strong>`
 		// add to cart
 		let btnAdd = document.createElement('button')
