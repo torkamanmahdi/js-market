@@ -8,6 +8,7 @@ function cartLoader() {
 	getItem.addEventListener('click', (e) => {
 		getProductItem(e)
 		itemLS()
+		totalCart()
 		ifEmpty.innerHTML = ''
 	})
 	document.addEventListener('DOMContentLoaded', (e) => {
@@ -27,12 +28,14 @@ function cartLoader() {
 			totalCart(inCart)
 		} else {
 			ifEmpty.innerHTML = 'cart is empty'
+			totalPrice.innerHTML = 'total price: 0$'
 		}
 	})
 	emptyCart.addEventListener('click', (e) => {
 		removeLS()
 		cartList.innerHTML = ''
 		ifEmpty.innerHTML = 'cart is empty'
+		totalPrice.innerHTML = 'total price: 0$'
 	})
 }
 cartLoader()
@@ -68,6 +71,7 @@ function addToCart(itemInfo) {
 function cartToLS(item) {
 	let items = cartLS()
 	items.push(item)
+	items.push
 	localStorage.setItem('cart', JSON.stringify(items))
 }
 
@@ -89,4 +93,20 @@ function removeLS() {
 	if(localStorage.getItem('cart')) {
 		localStorage.removeItem('cart')
 	}
+}
+
+function totalCart(inCart) {
+	let priceArray = []
+	inCart.forEach(element => {
+		priceArray.push(parseInt(element.price))
+	})
+	const reducer = (previousPrice, currentPrice) => previousPrice + currentPrice
+	let fullPrice = priceArray.reduce(reducer)
+	localStorage.setItem('totalPrice', JSON.stringify(fullPrice))
+	let lastP = localStorage.getItem('totalPrice')
+	totalPrice.innerHTML = `Total Price: <strong>${lastP}</strong> $`
+
+	console.log(priceArray)
+	console.log(fullPrice)
+	console.log(lastP)
 }
