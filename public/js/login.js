@@ -2,6 +2,7 @@ const loginSubmit = document.querySelector('#loginSubmit')
 const loginEmail = document.querySelector('#loginEmail')
 const loginPassword = document.querySelector('#loginPassword')
 const loginApi = 'https://hakims-webshop.herokuapp.com/user/authentication'
+// https://randomuser.me/api/
 
 loginEmail.addEventListener('focusout', (e) => {
 	e.preventDefault()
